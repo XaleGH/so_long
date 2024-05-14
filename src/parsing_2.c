@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:03:44 by asaux             #+#    #+#             */
-/*   Updated: 2024/04/29 12:32:33 by asaux            ###   ########.fr       */
+/*   Updated: 2024/05/14 13:32:15 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	init_player_exit_pos(t_data *data)
 void	flood_map(char **map, t_pos pos)
 {
 	if (map[pos.x][pos.y] == '1' || map[pos.x][pos.y] == 'F')
-		return;
+		return ;
 	map[pos.x][pos.y] = 'F';
 	flood_map(map, (t_pos){pos.x, pos.y + 1});
 	flood_map(map, (t_pos){pos.x, pos.y - 1});

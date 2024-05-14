@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:13:46 by asaux             #+#    #+#             */
-/*   Updated: 2024/04/29 14:09:05 by asaux            ###   ########.fr       */
+/*   Updated: 2024/05/14 13:28:38 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,17 @@ void	move_left_1(t_data *data, int x, int y)
 		if (data->map_data.map[x][y - 1] == 'C')
 			data->map_data.c_collected += 1;
 		if (data->map_data.map[x][y] == 'E')
-			display_img(data, data->img.exit_closed, y ,x);
+			display_img(data, data->img.exit_closed, y, x);
 		else
 		{
 			data->map_data.map[x][y] = '0';
-			display_img(data, data->img.ground, y ,x);
+			display_img(data, data->img.ground, y, x);
 		}
 		data->map_data.p_pos.y = y - 1;
 		if (data->map_data.map[x][y - 1] == 'E')
-			display_img(data, data->img.p_left_f1_p, (y - 1) ,x);
+			display_img(data, data->img.p_left_f1_p, (y - 1), x);
 		else
-			display_img(data, data->img.p_left_f1, (y - 1) ,x);
+			display_img(data, data->img.p_left_f1, (y - 1), x);
 		data->nb_moves++;
 		ft_printf("MOVES : %i\n", data->nb_moves);
 		move_enemy(data);
@@ -69,17 +69,17 @@ void	move_left_2(t_data *data, int x, int y)
 		if (data->map_data.map[x][y - 1] == 'C')
 			data->map_data.c_collected += 1;
 		if (data->map_data.map[x][y] == 'E')
-			display_img(data, data->img.exit_closed, y ,x);
+			display_img(data, data->img.exit_closed, y, x);
 		else
 		{
 			data->map_data.map[x][y] = '0';
-			display_img(data, data->img.ground, y ,x);
+			display_img(data, data->img.ground, y, x);
 		}
 		data->map_data.p_pos.y = y - 1;
 		if (data->map_data.map[x][y - 1] == 'E')
-			display_img(data, data->img.p_left_f2_p, (y - 1) ,x);
+			display_img(data, data->img.p_left_f2_p, (y - 1), x);
 		else
-			display_img(data, data->img.p_left_f2, (y - 1) ,x);
+			display_img(data, data->img.p_left_f2, (y - 1), x);
 		data->nb_moves++;
 		ft_printf("MOVES : %i\n", data->nb_moves);
 		move_enemy(data);

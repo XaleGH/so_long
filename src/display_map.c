@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:50:36 by asaux             #+#    #+#             */
-/*   Updated: 2024/04/29 00:49:17 by asaux            ###   ########.fr       */
+/*   Updated: 2024/05/14 11:57:47 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	*convert_img(t_data *data, char *path)
 {
 	void	*img;
 
-	img = mlx_xpm_file_to_image(data->mlx, path, &(data->img.size), &(data->img.size));
+	img = mlx_xpm_file_to_image(data->mlx, path, &(data->img.size),
+			&(data->img.size));
 	return (img);
 }
 
@@ -59,7 +60,7 @@ void	put_img_to_map(t_data *data)
 {
 	int	x;
 	int	y;
-	
+
 	x = 0;
 	while (data->map_data.map[x])
 	{
@@ -90,14 +91,15 @@ void	display_map(t_data *data)
 	data->map_data.width = data->map_data.nb_column * SIZE;
 	data->mlx = mlx_init();
 	if (data->mlx == NULL)
-		return;
+		return ;
 	data->img.size = SIZE;
 	set_img(data);
-	data->mlx_win = mlx_new_window(data->mlx, data->map_data.width, data->map_data.height, "so_long");
+	data->mlx_win = mlx_new_window(data->mlx, data->map_data.width,
+			data->map_data.height, "so_long");
 	if (!data->mlx_win)
 	{
 		free(data->mlx);
-		return;
+		return ;
 	}
 	put_img_to_map(data);
 }

@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:05:15 by asaux             #+#    #+#             */
-/*   Updated: 2024/04/29 12:35:42 by asaux            ###   ########.fr       */
+/*   Updated: 2024/05/14 13:32:37 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	check_exten(char *av)
 	int		i;
 	int		j;
 	char	*ext;
-	
+
 	ext = ".ber";
 	i = ft_strlen(av) - 1;
 	j = 3;
@@ -34,7 +34,7 @@ int	check_exten(char *av)
 void	is_map_rectangle(t_data *data)
 {
 	int	x;
-	
+
 	x = 0;
 	data->map_data.nb_column = ft_strlen(data->map_data.map[x]);
 	while (data->map_data.map[x])
@@ -71,7 +71,7 @@ int	check_path(char **map)
 int	main(int ac, char **av)
 {
 	t_data	data;
-	
+
 	if (ac != 2)
 		ft_error(0);
 	check_exten(av[1]);

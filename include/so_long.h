@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:01:10 by asaux             #+#    #+#             */
-/*   Updated: 2024/04/30 13:05:42 by asaux            ###   ########.fr       */
+/*   Updated: 2024/05/14 13:33:14 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,14 @@ typedef struct s_map_data{
 	int				c_collected;
 	int				width;
 	int				height;
-	t_pos 			p_pos;
+	t_pos			p_pos;
 	t_pos			e_pos;
 	t_pos			m_pos;
 }	t_map_data;
 
 typedef struct s_data{
-	void 			*mlx;
-	void 			*mlx_win;
+	void			*mlx;
+	void			*mlx_win;
 	int				nb_moves;
 	t_map_data		map_data;
 	t_img			img;

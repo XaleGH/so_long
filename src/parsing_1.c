@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:54:26 by asaux             #+#    #+#             */
-/*   Updated: 2024/04/29 12:36:07 by asaux            ###   ########.fr       */
+/*   Updated: 2024/05/14 13:31:58 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	check_walls_and_char(t_data *data)
 		x++;
 	}
 	check_counts(data);
-	
 }
 
 char	**read_map(char **av)
@@ -72,7 +71,7 @@ char	**read_map(char **av)
 	char	*line;
 	char	*map_line;
 	int		map_file;
-	
+
 	map_file = open(av[1], O_RDONLY);
 	if (!map_file)
 		ft_error(2);
@@ -86,7 +85,7 @@ char	**read_map(char **av)
 		free(line);
 		line = get_next_line(map_file);
 		if (!line)
-			break;
+			break ;
 	}
 	free(line);
 	map = ft_split(map_line, '\n');
