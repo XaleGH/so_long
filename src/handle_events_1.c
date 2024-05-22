@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_events_1.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
+/*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 09:58:50 by asaux             #+#    #+#             */
-/*   Updated: 2024/05/14 13:25:04 by asaux            ###   ########.fr       */
+/*   Updated: 2024/05/22 15:12:14 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ int	handle_events(int keycode, t_data *data)
 		move_left(data);
 	if (keycode == 65363 || keycode == 100)
 		move_right(data);
+	display_black_rectangle(data);
+	display_moves(data);
 	if (data->map_data.m_pos.x == data->map_data.p_pos.x
 		&& data->map_data.m_pos.y == data->map_data.p_pos.y)
 		game_loose(data);
@@ -97,7 +99,5 @@ int	handle_events(int keycode, t_data *data)
 	else if (data->map_data.c_collected == data->map_data.c_count)
 		display_img(data, data->img.exit_opened, data->map_data.e_pos.y,
 			data->map_data.e_pos.x);
-	display_black_rectangle(data);
-	display_moves(data);
 	return (0);
 }
