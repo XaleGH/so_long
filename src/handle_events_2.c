@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_events_2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
+/*   By: asaux <asaux@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:09:36 by asaux             #+#    #+#             */
-/*   Updated: 2024/05/14 13:25:37 by asaux            ###   ########.fr       */
+/*   Updated: 2024/05/22 18:14:43 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,52 +53,58 @@ void	move_enemy(t_data *data)
 
 void	move_enemy_1(t_data *data, int x, int y)
 {
-	if (data->nb_moves % 3 == 0)
+	if (data->map_data.m_count)
 	{
-		if (data->map_data.map[x][y + 1] == '0')
-			enemy_right_1(data, x, y);
-		else if (data->map_data.map[x + 1][y] == '0')
-			enemy_down_1(data, x, y);
-		else if (data->map_data.map[x][y - 1] == '0')
-			enemy_left_1(data, x, y);
-		else if (data->map_data.map[x - 1][y] == '0')
-			enemy_up_1(data, x, y);
-	}
-	else if (data->nb_moves % 1 == 0)
-	{
-		if (data->map_data.map[x][y - 1] == '0')
-			enemy_left_1(data, x, y);
-		else if (data->map_data.map[x - 1][y] == '0')
-			enemy_up_1(data, x, y);
-		else if (data->map_data.map[x][y + 1] == '0')
-			enemy_right_1(data, x, y);
-		else if (data->map_data.map[x + 1][y] == '0')
-			enemy_down_1(data, x, y);
+		if (data->nb_moves % 3 == 0)
+		{
+			if (data->map_data.map[x][y + 1] == '0')
+				enemy_right_1(data, x, y);
+			else if (data->map_data.map[x + 1][y] == '0')
+				enemy_down_1(data, x, y);
+			else if (data->map_data.map[x][y - 1] == '0')
+				enemy_left_1(data, x, y);
+			else if (data->map_data.map[x - 1][y] == '0')
+				enemy_up_1(data, x, y);
+		}
+		else if (data->nb_moves % 1 == 0)
+		{
+			if (data->map_data.map[x][y - 1] == '0')
+				enemy_left_1(data, x, y);
+			else if (data->map_data.map[x - 1][y] == '0')
+				enemy_up_1(data, x, y);
+			else if (data->map_data.map[x][y + 1] == '0')
+				enemy_right_1(data, x, y);
+			else if (data->map_data.map[x + 1][y] == '0')
+				enemy_down_1(data, x, y);
+		}
 	}
 }
 
 void	move_enemy_2(t_data *data, int x, int y)
 {
-	if (data->nb_moves % 5 == 0)
+	if (data->map_data.m_count)
 	{
-		if (data->map_data.map[x][y + 1] == '0')
-			enemy_right_2(data, x, y);
-		else if (data->map_data.map[x + 1][y] == '0')
-			enemy_down_2(data, x, y);
-		else if (data->map_data.map[x][y - 1] == '0')
-			enemy_left_2(data, x, y);
-		else if (data->map_data.map[x - 1][y] == '0')
-			enemy_up_2(data, x, y);
-	}
-	else if (data->nb_moves % 1 == 0)
-	{
-		if (data->map_data.map[x - 1][y] == '0')
-			enemy_up_2(data, x, y);
-		else if (data->map_data.map[x][y - 1] == '0')
-			enemy_left_2(data, x, y);
-		else if (data->map_data.map[x][y + 1] == '0')
-			enemy_right_2(data, x, y);
-		else if (data->map_data.map[x + 1][y] == '0')
-			enemy_down_2(data, x, y);
+		if (data->nb_moves % 5 == 0)
+		{
+			if (data->map_data.map[x][y + 1] == '0')
+				enemy_right_2(data, x, y);
+			else if (data->map_data.map[x + 1][y] == '0')
+				enemy_down_2(data, x, y);
+			else if (data->map_data.map[x][y - 1] == '0')
+				enemy_left_2(data, x, y);
+			else if (data->map_data.map[x - 1][y] == '0')
+				enemy_up_2(data, x, y);
+		}
+		else if (data->nb_moves % 1 == 0)
+		{
+			if (data->map_data.map[x - 1][y] == '0')
+				enemy_up_2(data, x, y);
+			else if (data->map_data.map[x][y - 1] == '0')
+				enemy_left_2(data, x, y);
+			else if (data->map_data.map[x][y + 1] == '0')
+				enemy_right_2(data, x, y);
+			else if (data->map_data.map[x + 1][y] == '0')
+				enemy_down_2(data, x, y);
+		}
 	}
 }
